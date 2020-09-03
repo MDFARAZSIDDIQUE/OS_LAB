@@ -60,9 +60,9 @@ int main()
     scanf("%d" , &n);
     int processes[n] ,  burst_time[n] ;
     for (i = 0 ; i < n ; i++){
-        processes[i] = i+1;
+        processes[i] = i;
         int c;
-        printf("Enter Burst Time for process %d:" , processes[i]);
+        printf("Enter Burst Time for process %d: " , processes[i]);
         scanf("%d" , &burst_time[i]);
     }
 
