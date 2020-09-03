@@ -1,7 +1,7 @@
 
 #include<stdio.h> 
 
-void findWaitingTime(int processes[], int n, 
+void findwt(int processes[], int n, 
 						int bt[], int wt[]) 
 { 
 	
@@ -12,7 +12,7 @@ void findWaitingTime(int processes[], int n,
 } 
 	
 
-void findTurnAroundTime( int processes[], int n, 
+void findtat( int processes[], int n, 
 				int bt[], int wt[], int tat[]) 
 { 
 	
@@ -21,15 +21,15 @@ void findTurnAroundTime( int processes[], int n,
 } 
 	
 
-void findavgTime( int processes[], int n, int bt[]) 
+void avg( int processes[], int n, int bt[]) 
 { 
 	int wt[n], tat[n], total_wt = 0, total_tat = 0; 
 	
 	
-	findWaitingTime(processes, n, bt, wt); 
+	findwt(processes, n, bt, wt); 
 	
 	
-	findTurnAroundTime(processes, n, bt, wt, tat); 
+	findtat(processes, n, bt, wt, tat); 
 	
 
 	printf("Processes Burst time Waiting time Turn around time\n"); 
@@ -55,12 +55,18 @@ void findavgTime( int processes[], int n, int bt[])
 int main() 
 { 
 	
-	int processes[] = { 1, 2, 3}; 
-	int n = sizeof processes / sizeof processes[0]; 
+	int n,i;
+    printf("Enter number of processes : ");
+    scanf("%d" , &n);
+    int processes[n] ,  burst_time[n] ;
+    for (i = 0 ; i < n ; i++){
+        processes[i] = i+1;
+        int c;
+        printf("Enter Burst Time for process %d:" , processes[i]);
+        scanf("%d" , &burst_time[i]);
+    }
+
 	
-	
-	int burst_time[] = {10, 5, 8}; 
-	
-	findavgTime(processes, n, burst_time); 
+	avg(processes, n, burst_time); 
 	return 0; 
 } 
