@@ -1,5 +1,0 @@
-Burst Time :- Execution time, unit dosen't matter
-Criteria :- Arrival time
-Mode : Non Preemptive (Scheduling tasks according to their priorities)
-Gantt Chart :- A Gantt chart is a project management tool assisting in the planning and scheduling of projects of all sizes.
-
